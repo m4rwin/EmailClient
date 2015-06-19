@@ -1,0 +1,9 @@
+C:\Users\Martin\Downloads\EmailClient\bin\Debug\EmailClient.exe
+C:\Users\Martin\Downloads\EmailClient\bin\Debug\EmailClient.pdb
+C:\Users\Martin\Downloads\EmailClient\obj\Debug\EmailClient.Form1.resources
+C:\Users\Martin\Downloads\EmailClient\obj\Debug\EmailClient.Properties.Resources.resources
+C:\Users\Martin\Downloads\EmailClient\obj\Debug\EmailClient.csproj.GenerateResource.Cache
+C:\Users\Martin\Downloads\EmailClient\obj\Debug\EmailClient.exe
+C:\Users\Martin\Downloads\EmailClient\obj\Debug\EmailClient.pdb
+C:\Users\Martin\Downloads\EmailClient\obj\Debug\EmailClient.Contacts.resources
+C:\Users\Martin\Downloads\EmailClient\bin\Debug\EmailClient.exe.config
