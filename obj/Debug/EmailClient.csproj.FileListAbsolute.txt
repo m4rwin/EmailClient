@@ -7,3 +7,13 @@ C:\Users\Martin\Downloads\EmailClient\obj\Debug\EmailClient.exe
 C:\Users\Martin\Downloads\EmailClient\obj\Debug\EmailClient.pdb
 C:\Users\Martin\Downloads\EmailClient\obj\Debug\EmailClient.Contacts.resources
 C:\Users\Martin\Downloads\EmailClient\bin\Debug\EmailClient.exe.config
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\bin\Debug\EmailClient.exe.config
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Debug\EmailClient.exe
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Debug\EmailClient.pdb
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\bin\Debug\EmailClient.exe
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\bin\Debug\EmailClient.pdb
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Debug\EmailClient.csprojResolveAssemblyReference.cache
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Debug\EmailClient.Contacts.resources
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Debug\EmailClient.Form1.resources
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Debug\EmailClient.Properties.Resources.resources
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Debug\EmailClient.csproj.GenerateResource.Cache

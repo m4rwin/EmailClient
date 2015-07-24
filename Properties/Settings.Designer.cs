@@ -118,5 +118,17 @@ namespace EmailClient.Properties {
                 this["Body"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Contacts {
+            get {
+                return ((string)(this["Contacts"]));
+            }
+            set {
+                this["Contacts"] = value;
+            }
+        }
     }
 }

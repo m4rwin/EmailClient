@@ -7,3 +7,12 @@ C:\Users\Martin\Downloads\EmailClient\obj\Release\EmailClient.exe
 C:\Users\Martin\Downloads\EmailClient\obj\Release\EmailClient.pdb
 C:\Users\Martin\Downloads\EmailClient\bin\Release\EmailClient.exe.config
 C:\Users\Martin\Downloads\EmailClient\obj\Release\EmailClient.Contacts.resources
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\bin\Release\EmailClient.exe.config
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Release\EmailClient.exe
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Release\EmailClient.pdb
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\bin\Release\EmailClient.exe
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\bin\Release\EmailClient.pdb
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Release\EmailClient.Contacts.resources
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Release\EmailClient.Form1.resources
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Release\EmailClient.Properties.Resources.resources
+C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Release\EmailClient.csproj.GenerateResource.Cache

@@ -123,7 +123,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 155);
+            this.label5.Location = new System.Drawing.Point(12, 209);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(50, 13);
             this.label5.TabIndex = 12;
@@ -133,21 +133,23 @@
             // 
             this.textBoxFrom.Location = new System.Drawing.Point(61, 85);
             this.textBoxFrom.Name = "textBoxFrom";
-            this.textBoxFrom.Size = new System.Drawing.Size(160, 20);
+            this.textBoxFrom.Size = new System.Drawing.Size(209, 20);
             this.textBoxFrom.TabIndex = 9;
             // 
             // textBoxTo
             // 
             this.textBoxTo.Location = new System.Drawing.Point(61, 118);
+            this.textBoxTo.Multiline = true;
             this.textBoxTo.Name = "textBoxTo";
-            this.textBoxTo.Size = new System.Drawing.Size(160, 20);
+            this.textBoxTo.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxTo.Size = new System.Drawing.Size(209, 82);
             this.textBoxTo.TabIndex = 11;
             // 
             // textBoxSubject
             // 
-            this.textBoxSubject.Location = new System.Drawing.Point(61, 151);
+            this.textBoxSubject.Location = new System.Drawing.Point(61, 206);
             this.textBoxSubject.Name = "textBoxSubject";
-            this.textBoxSubject.Size = new System.Drawing.Size(160, 20);
+            this.textBoxSubject.Size = new System.Drawing.Size(209, 20);
             this.textBoxSubject.TabIndex = 13;
             // 
             // textBoxBody
@@ -155,11 +157,11 @@
             this.textBoxBody.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxBody.Location = new System.Drawing.Point(16, 197);
+            this.textBoxBody.Location = new System.Drawing.Point(16, 245);
             this.textBoxBody.Multiline = true;
             this.textBoxBody.Name = "textBoxBody";
             this.textBoxBody.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxBody.Size = new System.Drawing.Size(693, 186);
+            this.textBoxBody.Size = new System.Drawing.Size(693, 281);
             this.textBoxBody.TabIndex = 15;
             // 
             // listViewFiles
@@ -169,9 +171,9 @@
             this.listViewFiles.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
-            this.listViewFiles.Location = new System.Drawing.Point(261, 76);
+            this.listViewFiles.Location = new System.Drawing.Point(313, 76);
             this.listViewFiles.Name = "listViewFiles";
-            this.listViewFiles.Size = new System.Drawing.Size(448, 97);
+            this.listViewFiles.Size = new System.Drawing.Size(396, 97);
             this.listViewFiles.TabIndex = 17;
             this.listViewFiles.UseCompatibleStateImageBehavior = false;
             this.listViewFiles.View = System.Windows.Forms.View.Details;
@@ -189,7 +191,7 @@
             // buttonSend
             // 
             this.buttonSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonSend.Location = new System.Drawing.Point(16, 391);
+            this.buttonSend.Location = new System.Drawing.Point(16, 534);
             this.buttonSend.Name = "buttonSend";
             this.buttonSend.Size = new System.Drawing.Size(75, 23);
             this.buttonSend.TabIndex = 18;
@@ -216,7 +218,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 178);
+            this.label7.Location = new System.Drawing.Point(13, 229);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 13);
             this.label7.TabIndex = 14;
@@ -251,7 +253,7 @@
             // 
             // btnContacts
             // 
-            this.btnContacts.Location = new System.Drawing.Point(227, 118);
+            this.btnContacts.Location = new System.Drawing.Point(276, 117);
             this.btnContacts.Name = "btnContacts";
             this.btnContacts.Size = new System.Drawing.Size(28, 23);
             this.btnContacts.TabIndex = 19;
@@ -261,7 +263,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(110, 391);
+            this.progressBar1.Location = new System.Drawing.Point(110, 534);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(260, 23);
             this.progressBar1.TabIndex = 20;
@@ -269,7 +271,7 @@
             // lblProgresInfo
             // 
             this.lblProgresInfo.AutoSize = true;
-            this.lblProgresInfo.Location = new System.Drawing.Point(376, 396);
+            this.lblProgresInfo.Location = new System.Drawing.Point(390, 539);
             this.lblProgresInfo.Name = "lblProgresInfo";
             this.lblProgresInfo.Size = new System.Drawing.Size(16, 13);
             this.lblProgresInfo.TabIndex = 21;
@@ -279,7 +281,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 426);
+            this.ClientSize = new System.Drawing.Size(721, 569);
             this.Controls.Add(this.lblProgresInfo);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnContacts);
@@ -303,6 +305,7 @@
             this.Controls.Add(this.textBoxHostname);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Email client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPort)).EndInit();

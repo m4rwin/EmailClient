@@ -17,8 +17,11 @@ namespace EmailClient
     public partial class Form1 : Form
     {
         #region properties
-        BackgroundWorker worker;
-        EmailItem item;
+        private BackgroundWorker worker;
+        public EmailItem item;
+        public List<ContactItem> Contacst;
+        public Contacts ContactsWindow;
+        public ContextMenu menu;
         #endregion
 
         #region init
@@ -33,10 +36,29 @@ namespace EmailClient
             worker.ProgressChanged += worker_ProgressChanged;
             worker.RunWorkerCompleted += worker_RunWorkerCompleted;
             worker.WorkerReportsProgress = true;
+
+            ContactsWindow = new Contacts(Contacst, this);
+
+            // Context Menu
+            menu = new ContextMenu();
+            menu.MenuItems.Add("Smazat", new EventHandler(RemoveItem));
+            listViewFiles.ContextMenu = menu;
+        }
+
+        private void RemoveItem(object sender, EventArgs e)
+        {
+            if(listViewFiles.SelectedItems != null)
+            {
+                foreach (ListViewItem item in listViewFiles.Items)
+                {
+                    item.Remove();
+                }
+            }
         }
 
         private void LoadSettings()
         {
+            Contacst = new List<ContactItem>(50);
             textBoxHostname.Text = Properties.Settings.Default.Host;
             numericUpDownPort.Value = (string.IsNullOrWhiteSpace(Properties.Settings.Default.Port)) ? 456 : Convert.ToInt32(Properties.Settings.Default.Port);
             textBoxUsername.Text = Properties.Settings.Default.Username;
@@ -45,6 +67,7 @@ namespace EmailClient
             textBoxTo.Text = Properties.Settings.Default.To;
             textBoxSubject.Text = Properties.Settings.Default.Subject;
             textBoxBody.Text = Properties.Settings.Default.Body;
+            this.Contacst = ContactItem.LoadContacst(Properties.Settings.Default.Contacts);
         }
         #endregion
 
@@ -172,7 +195,7 @@ namespace EmailClient
 
         private void btnContacts_Click(object sender, EventArgs e)
         {
-
+            ContactsWindow.Show();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -185,9 +208,21 @@ namespace EmailClient
             Properties.Settings.Default.To = textBoxTo.Text;
             Properties.Settings.Default.Subject = textBoxSubject.Text;
             Properties.Settings.Default.Body = textBoxBody.Text;
+            Properties.Settings.Default.Contacts = ContactItem.StoreContacst(this.Contacst);
 
             Properties.Settings.Default.Save();
         }
+
+        public void SetRecepient(List<ContactItem> list)
+        {
+            textBoxTo.Text = string.Empty;
+            foreach (ContactItem item in list)
+            {
+                textBoxTo.Text += item.Email + ";"+ Environment.NewLine;
+            }
+        }
+
+
     }
 
 
