@@ -19,9 +19,14 @@ namespace EmailClient
         #region properties
         private BackgroundWorker worker;
         public EmailItem item;
-        public List<ContactItem> Contacst;
+        //public List<ContactItem> Contacst;
         public Contacts ContactsWindow;
         public ContextMenu menu;
+        public string SourceFile;
+
+        public DataSet ds = new DataSet();
+        public DataTable dt = new DataTable("Contacts");
+        public BindingSource bs = new BindingSource();       
         #endregion
 
         #region init
@@ -37,28 +42,26 @@ namespace EmailClient
             worker.RunWorkerCompleted += worker_RunWorkerCompleted;
             worker.WorkerReportsProgress = true;
 
-            ContactsWindow = new Contacts(Contacst, this);
+            ContactsWindow = new Contacts(/*Contacst,*/ this);
 
             // Context Menu
             menu = new ContextMenu();
             menu.MenuItems.Add("Smazat", new EventHandler(RemoveItem));
             listViewFiles.ContextMenu = menu;
+
+            this.Text = "Emajlovač v1.3";
+
+            dt.Columns.Add(new DataColumn("Name", typeof(string)));
+            dt.Columns.Add(new DataColumn("Email", typeof(string)));
+            dt.Columns.Add(new DataColumn("Note", typeof(string)));
+            ds.Tables.Add(dt);
         }
 
-        private void RemoveItem(object sender, EventArgs e)
-        {
-            if(listViewFiles.SelectedItems != null)
-            {
-                foreach (ListViewItem item in listViewFiles.Items)
-                {
-                    item.Remove();
-                }
-            }
-        }
+        
 
         private void LoadSettings()
         {
-            Contacst = new List<ContactItem>(50);
+            //Contacst = new List<ContactItem>(50);
             textBoxHostname.Text = Properties.Settings.Default.Host;
             numericUpDownPort.Value = (string.IsNullOrWhiteSpace(Properties.Settings.Default.Port)) ? 456 : Convert.ToInt32(Properties.Settings.Default.Port);
             textBoxUsername.Text = Properties.Settings.Default.Username;
@@ -67,7 +70,9 @@ namespace EmailClient
             textBoxTo.Text = Properties.Settings.Default.To;
             textBoxSubject.Text = Properties.Settings.Default.Subject;
             textBoxBody.Text = Properties.Settings.Default.Body;
-            this.Contacst = ContactItem.LoadContacst(Properties.Settings.Default.Contacts);
+            this.SourceFile = Properties.Settings.Default.SourceFile;
+
+            bs.DataSource = dt;
         }
         #endregion
 
@@ -90,9 +95,14 @@ namespace EmailClient
 
         void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            MessageBox.Show("Zpráva byla odeslána na: " +string.Join(",", item.to));
+            DialogResult r = MessageBox.Show("Zpráva byla odeslána na: " +string.Join(",", item.to));
             progressBar1.Value = 0;
             lblProgresInfo.Text = "---";
+
+            if (r == System.Windows.Forms.DialogResult.OK)
+            {
+                this.Enabled = true;
+            }
         }
         #endregion
 
@@ -144,6 +154,9 @@ namespace EmailClient
 
             try
             {
+                //this.Enabled = false;
+                buttonSend.Enabled = false;
+
                 SendEmail(textBoxHostname.Text, (int)numericUpDownPort.Value,
                     textBoxUsername.Text, textBoxPassword.Text,
                     textBoxFrom.Text, textBoxTo.Text,
@@ -154,8 +167,10 @@ namespace EmailClient
             {
                 MessageBox.Show("Chyba při odesílání: " + ex.Message);
             }
-
-
+            finally
+            {
+               
+            }
         }
 
         private void SendEmail(string host, int port, string username, string password, string from, string to, string subject, string body, ICollection<string> attachedFiles)
@@ -188,7 +203,14 @@ namespace EmailClient
                     //if your SMTP server requires a password, this line is important
                     client.Credentials = new NetworkCredential(item.username, item.password);
                     //this send is syncronous. You can also choose to send asyncronously
-                    client.Send(message);
+                    try
+                    {
+                        client.Send(message);
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
                 }
             //}
         }
@@ -208,7 +230,7 @@ namespace EmailClient
             Properties.Settings.Default.To = textBoxTo.Text;
             Properties.Settings.Default.Subject = textBoxSubject.Text;
             Properties.Settings.Default.Body = textBoxBody.Text;
-            Properties.Settings.Default.Contacts = ContactItem.StoreContacst(this.Contacst);
+            Properties.Settings.Default.SourceFile = this.SourceFile;
 
             Properties.Settings.Default.Save();
         }
@@ -222,7 +244,19 @@ namespace EmailClient
             }
         }
 
-
+        /*
+         * CZE: Odstrani soubory z priloh
+         */
+        private void RemoveItem(object sender, EventArgs e)
+        {
+            foreach (ListViewItem item in listViewFiles.Items)
+            {
+                if (item.Selected)
+                {
+                    item.Remove();
+                }
+            }
+        }
     }
 
 
