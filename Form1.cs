@@ -49,7 +49,7 @@ namespace EmailClient
             menu.MenuItems.Add("Smazat", new EventHandler(RemoveItem));
             listViewFiles.ContextMenu = menu;
 
-            this.Text = "Emajlovač v1.3";
+            this.Text = "Emajlovač v1.4";
 
             dt.Columns.Add(new DataColumn("Name", typeof(string)));
             dt.Columns.Add(new DataColumn("Email", typeof(string)));
@@ -101,7 +101,8 @@ namespace EmailClient
 
             if (r == System.Windows.Forms.DialogResult.OK)
             {
-                this.Enabled = true;
+                //this.Enabled = true;
+                buttonSend.Enabled = false;
             }
         }
         #endregion
@@ -202,6 +203,7 @@ namespace EmailClient
                     SmtpClient client = new SmtpClient(item.host, item.port);
                     //if your SMTP server requires a password, this line is important
                     client.Credentials = new NetworkCredential(item.username, item.password);
+                    client.EnableSsl = true;
                     //this send is syncronous. You can also choose to send asyncronously
                     try
                     {

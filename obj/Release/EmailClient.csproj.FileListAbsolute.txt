@@ -16,4 +16,3 @@ C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Release\Em
 C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Release\EmailClient.Form1.resources
 C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Release\EmailClient.Properties.Resources.resources
 C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Release\EmailClient.csproj.GenerateResource.Cache
-C:\Users\Martin\Documents\Visual Studio 2012\Projects\EmailClient\obj\Release\EmailClient.csprojResolveAssemblyReference.cache
