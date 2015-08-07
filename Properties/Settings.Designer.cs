@@ -142,5 +142,17 @@ namespace EmailClient.Properties {
                 this["SourceFile"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SSL {
+            get {
+                return ((string)(this["SSL"]));
+            }
+            set {
+                this["SSL"] = value;
+            }
+        }
     }
 }

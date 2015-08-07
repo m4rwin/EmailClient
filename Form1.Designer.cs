@@ -52,6 +52,7 @@
             this.btnContacts = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.lblProgresInfo = new System.Windows.Forms.Label();
+            this.checkBoxSSL = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPort)).BeginInit();
             this.SuspendLayout();
             // 
@@ -277,11 +278,22 @@
             this.lblProgresInfo.TabIndex = 21;
             this.lblProgresInfo.Text = "---";
             // 
+            // checkBoxSSL
+            // 
+            this.checkBoxSSL.AutoSize = true;
+            this.checkBoxSSL.Location = new System.Drawing.Point(340, 13);
+            this.checkBoxSSL.Name = "checkBoxSSL";
+            this.checkBoxSSL.Size = new System.Drawing.Size(46, 17);
+            this.checkBoxSSL.TabIndex = 22;
+            this.checkBoxSSL.Text = "SSL";
+            this.checkBoxSSL.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 569);
+            this.Controls.Add(this.checkBoxSSL);
             this.Controls.Add(this.lblProgresInfo);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnContacts);
@@ -342,6 +354,7 @@
         private System.Windows.Forms.Button btnContacts;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label lblProgresInfo;
+        private System.Windows.Forms.CheckBox checkBoxSSL;
     }
 }
 

@@ -49,7 +49,7 @@ namespace EmailClient
             menu.MenuItems.Add("Smazat", new EventHandler(RemoveItem));
             listViewFiles.ContextMenu = menu;
 
-            this.Text = "Emajlovač v1.4";
+            this.Text = "Emajlovač v1.5";
 
             dt.Columns.Add(new DataColumn("Name", typeof(string)));
             dt.Columns.Add(new DataColumn("Email", typeof(string)));
@@ -71,6 +71,7 @@ namespace EmailClient
             textBoxSubject.Text = Properties.Settings.Default.Subject;
             textBoxBody.Text = Properties.Settings.Default.Body;
             this.SourceFile = Properties.Settings.Default.SourceFile;
+            checkBoxSSL.Checked = (string.IsNullOrWhiteSpace(Properties.Settings.Default.SSL)) ? false : Convert.ToBoolean(Convert.ToBoolean(Properties.Settings.Default.SSL));
 
             bs.DataSource = dt;
         }
@@ -203,7 +204,13 @@ namespace EmailClient
                     SmtpClient client = new SmtpClient(item.host, item.port);
                     //if your SMTP server requires a password, this line is important
                     client.Credentials = new NetworkCredential(item.username, item.password);
-                    client.EnableSsl = true;
+
+                    if (checkBoxSSL.Checked)
+                    {
+                        client.EnableSsl = true;
+                    }
+                    else { client.EnableSsl = false; }
+                    
                     //this send is syncronous. You can also choose to send asyncronously
                     try
                     {
@@ -233,6 +240,7 @@ namespace EmailClient
             Properties.Settings.Default.Subject = textBoxSubject.Text;
             Properties.Settings.Default.Body = textBoxBody.Text;
             Properties.Settings.Default.SourceFile = this.SourceFile;
+            Properties.Settings.Default.SSL = checkBoxSSL.Checked.ToString();
 
             Properties.Settings.Default.Save();
         }
