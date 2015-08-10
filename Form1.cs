@@ -49,7 +49,7 @@ namespace EmailClient
             menu.MenuItems.Add("Smazat", new EventHandler(RemoveItem));
             listViewFiles.ContextMenu = menu;
 
-            this.Text = "Emajlovač v1.5";
+            this.Text = "Emajlovač v1.6";
 
             dt.Columns.Add(new DataColumn("Name", typeof(string)));
             dt.Columns.Add(new DataColumn("Email", typeof(string)));
@@ -103,7 +103,7 @@ namespace EmailClient
             if (r == System.Windows.Forms.DialogResult.OK)
             {
                 //this.Enabled = true;
-                buttonSend.Enabled = false;
+                buttonSend.Enabled = true;
             }
         }
         #endregion
@@ -171,7 +171,6 @@ namespace EmailClient
             }
             finally
             {
-               
             }
         }
 
