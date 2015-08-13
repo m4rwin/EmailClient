@@ -84,6 +84,8 @@ namespace EmailClient
         private void button1_Click(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
+            dialog.DefaultExt = "txt";
+            dialog.Filter = "Text files (*.txt) |*.txt";
             DialogResult result = dialog.ShowDialog();
             List<ContactItem> list = new List<ContactItem>();
 
@@ -187,6 +189,8 @@ namespace EmailClient
             else
             {*/
                 SaveFileDialog dialog = new SaveFileDialog();
+                dialog.DefaultExt = "txt";
+                dialog.Filter = "Text files (*.txt) |*.txt";
                 DialogResult result = dialog.ShowDialog();
 
                 if (result == DialogResult.OK)

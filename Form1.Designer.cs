@@ -285,7 +285,7 @@
             this.checkBoxSSL.Name = "checkBoxSSL";
             this.checkBoxSSL.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.checkBoxSSL.Size = new System.Drawing.Size(92, 17);
-            this.checkBoxSSL.TabIndex = 22;
+            this.checkBoxSSL.TabIndex = 4;
             this.checkBoxSSL.Text = "Šifrování SSL";
             this.checkBoxSSL.UseVisualStyleBackColor = true;
             // 

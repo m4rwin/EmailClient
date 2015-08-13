@@ -49,7 +49,7 @@ namespace EmailClient
             menu.MenuItems.Add("Smazat", new EventHandler(RemoveItem));
             listViewFiles.ContextMenu = menu;
 
-            this.Text = "Emajlovač v1.6";
+            this.Text = "Emajlovač v1.7";
 
             dt.Columns.Add(new DataColumn("Name", typeof(string)));
             dt.Columns.Add(new DataColumn("Email", typeof(string)));
